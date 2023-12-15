@@ -1,0 +1,13 @@
+def calcular_quadrado(input_string):
+    try:
+        numero = int(input_string)
+        
+        quadrado = numero ** 2
+        return quadrado
+    
+    except ValueError:
+        return f"A entrada '{input_string}' não é um número válido."
+
+entrada = input("Digite um número inteiro: ")
+resultado = calcular_quadrado(entrada)
+print(resultado)

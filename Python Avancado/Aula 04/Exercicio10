@@ -1,0 +1,11 @@
+def generator_com_excecao():
+    for i in range(5):
+        try:
+            if i == 3:
+                raise ValueError("Exceção gerada no índice 3.")
+            yield i
+        except ValueError as e:
+            print(f"Exceção capturada: {e}")
+
+for valor in generator_com_excecao():
+    print(f"Valor: {valor}")

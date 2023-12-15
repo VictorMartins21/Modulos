@@ -1,0 +1,18 @@
+def processar_frases(lista_frases, funcao_tokenizacao, funcao_processamento):
+    frases_tokenizadas = [funcao_tokenizacao(frase) for frase in lista_frases]
+
+    frases_processadas = [list(map(funcao_processamento, frase)) for frase in frases_tokenizadas]
+
+    return frases_processadas
+
+def tokenizar(frase):
+    return frase.split()
+
+def converter_para_maiusculas(palavra):
+    return palavra.upper()
+
+frases = ["Esta é uma frase de exemplo.", "Outra frase para ilustrar o processo."]
+
+resultado_final = processar_frases(frases, tokenizar, converter_para_maiusculas)
+
+print(resultado_final)

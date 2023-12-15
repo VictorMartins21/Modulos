@@ -1,0 +1,22 @@
+def unir_dicionarios(lista_de_dicionarios):
+    dicionario_unido = {}
+
+    for dicionario in lista_de_dicionarios:
+        dicionario_unido.update(dicionario)
+
+    return dicionario_unido
+
+lista_de_dicionarios = [
+    {"nome": "Alice", "idade": 30},
+    {"altura": 160, "peso": 60},
+    {"cidade": "São Paulo"}
+]
+
+dicionario_unido = unir_dicionarios(lista_de_dicionarios)
+
+print("Lista de dicionários original:")
+for dicionario in lista_de_dicionarios:
+    print(dicionario)
+
+print("\nDicionário unido:")
+print(dicionario_unido)

@@ -1,0 +1,11 @@
+pessoas = [
+    {"nome": "Alice", "idade": 21},
+    {"nome": "Bob", "idade": 25},
+    {"nome": "Charlie", "idade": 35},
+    {"nome": "David", "idade": 28}
+]
+
+pessoa_mais_jovem = min(pessoas, key=lambda pessoa: pessoa["idade"])
+
+print("Pessoa mais jovem:")
+print(pessoa_mais_jovem)

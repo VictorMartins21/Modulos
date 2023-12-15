@@ -1,0 +1,10 @@
+def quadrado_gerador(limite):
+    n = 0
+    while n < limite:
+        yield n ** 2
+        n += 1
+
+gerador_quadrados = quadrado_gerador(5)
+
+for quadrado in gerador_quadrados:
+    print(quadrado)

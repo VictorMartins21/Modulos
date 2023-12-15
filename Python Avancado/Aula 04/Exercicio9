@@ -1,0 +1,5 @@
+quadrados_lista = [x**2 for x in range(1, 6)]
+print(quadrados_lista)
+
+quadrados_generator = (x**2 for x in range(1, 6))
+print(list(quadrados_generator))

@@ -1,0 +1,11 @@
+def formatar_string(string, formato_funcao):
+    string_formatada = formato_funcao(string)
+    return string_formatada
+
+def formato_arbitrario(string):
+    return f"**{string.title()}**"
+
+minha_string = "exemplo de string"
+string_formatada = formatar_string(minha_string, formato_arbitrario)
+
+print(string_formatada)  

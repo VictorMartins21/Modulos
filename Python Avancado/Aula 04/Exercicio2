@@ -1,0 +1,19 @@
+class Fibonacci:
+    def __init__(self, n):
+        self.n = n
+
+    def gerar_sequencia(self):
+        a, b = 0, 1
+        contador = 0
+        while contador < self.n:
+            yield a
+            a, b = b, a + b
+            contador += 1
+
+#Exemplo de uso
+n = 10
+sequencia_fibonacci = Fibonacci(n)
+
+#Iterar sobre a sequência usando yield
+for elemento in sequencia_fibonacci.gerar_sequencia():
+    print(elemento)

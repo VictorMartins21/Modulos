@@ -1,0 +1,15 @@
+def numeros_pares(limit):
+    for num in range(limit + 1):
+        if num % 2 == 0:
+            yield num
+
+def quadrados_pares(limit):
+    for par in numeros_pares(limit):
+        yield par ** 2
+
+#Uso do generator alinhado
+limite = 5
+resultado = quadrados_pares(limite)
+
+for valor in resultado:
+    print(valor)

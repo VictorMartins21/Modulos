@@ -1,0 +1,54 @@
+class Funcionario:
+    def __init__(self, nome, salario, departamento):
+        self.nome = nome
+        self.salario = salario
+        self.departamento = departamento
+
+funcionarios = [
+    Funcionario("Alice", 50000, "TI"),
+    Funcionario("Bob", 60000, "Vendas"),
+    Funcionario("Charlie", 55000, "RH"),
+    Funcionario("David", 70000, "TI"),
+    Funcionario("Eva", 48000, "RH")
+]
+
+def aumentar_salario_for(funcionarios):
+    for funcionario in funcionarios:
+        funcionario.salario += 5000
+    return funcionarios
+
+def aumentar_salario_map(funcionarios):
+    return list(map(lambda f: Funcionario(f.nome, f.salario + 5000, f.departamento), funcionarios))
+
+def aumentar_salario_comprehension(funcionarios):
+    return [Funcionario(f.nome, f.salario + 5000, f.departamento) for f in funcionarios]
+
+def filtrar_ti(funcionarios):
+    return list(filter(lambda f: f.departamento == "TI", funcionarios))
+
+def filtrar_ti_comprehension(funcionarios):
+    return [f for f in funcionarios if f.departamento == "TI"]
+
+from functools import reduce
+
+def calcular_salario_total(funcionarios):
+    return reduce(lambda x, y: x + y.salario, funcionarios, 0)
+
+print("Funcionários (Antes do Aumento):", [f.salario for f in funcionarios])
+
+funcionarios_for = aumentar_salario_for(funcionarios.copy())
+funcionarios_map = aumentar_salario_map(funcionarios.copy())
+funcionarios_comprehension = aumentar_salario_comprehension(funcionarios.copy())
+
+print("Funcionários (Depois do Aumento - For):", [f.salario for f in funcionarios_for])
+print("Funcionários (Depois do Aumento - Map):", [f.salario for f in funcionarios_map])
+print("Funcionários (Depois do Aumento - List Comprehension):", [f.salario for f in funcionarios_comprehension])
+
+funcionarios_ti_filter = filtrar_ti(funcionarios.copy())
+funcionarios_ti_comprehension = filtrar_ti_comprehension(funcionarios.copy())
+
+print("Funcionários do Departamento de TI (Filter):", [f.nome for f in funcionarios_ti_filter])
+print("Funcionários do Departamento de TI (List Comprehension):", [f.nome for f in funcionarios_ti_comprehension])
+
+salario_total = calcular_salario_total(funcionarios.copy())
+print("Salário Total:", salario_total)

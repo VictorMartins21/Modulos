@@ -1,0 +1,11 @@
+pessoas = [
+    ("Alice", 30, 160),
+    ("Bob", 74, 175),
+    ("Charlie", 35, 155),
+    ("David", 28, 180)
+]
+
+pessoas_ordenadas = sorted(pessoas, key=lambda pessoa: pessoa[1])
+
+for pessoa in pessoas_ordenadas:
+    print(pessoa)

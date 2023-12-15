@@ -1,0 +1,30 @@
+class Fibonacci:
+    def __init__(self, n):
+        self.n = n
+        self.sequencia = [0, 1]
+
+    def gerar_sequencia(self):
+        while len(self.sequencia) < self.n:
+            proximo_elemento = self.sequencia[-1] + self.sequencia[-2]
+            self.sequencia.append(proximo_elemento)
+
+    def obter_sequencia(self):
+        self.gerar_sequencia()
+        return self.sequencia[:self.n]
+
+    def obter_elemento(self, indice):
+        self.gerar_sequencia()
+        return self.sequencia[indice]
+
+#Exemplo de uso
+n = 10
+sequencia_fibonacci = Fibonacci(n)
+
+#Obter a sequência completa
+sequencia = sequencia_fibonacci.obter_sequencia()
+print(f"Sequência de Fibonacci de tamanho {n}: {sequencia}")
+
+#Obter um elemento específico
+indice = 5
+elemento = sequencia_fibonacci.obter_elemento(indice)
+print(f"Elemento na posição {indice} da sequência: {elemento}")

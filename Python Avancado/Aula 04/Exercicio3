@@ -1,0 +1,23 @@
+class Contador:
+    def __init__(self, limite):
+        self.limite = limite
+        self.valor = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.valor < self.limite:
+            resultado = self.valor
+            self.valor += 1
+            return resultado
+        else:
+            raise StopIteration
+
+#Exemplo de uso
+limite_iteracao = 5
+contador_personalizado = Contador(limite_iteracao)
+
+#Iteração usando um loop for
+for numero in contador_personalizado:
+    print(numero)

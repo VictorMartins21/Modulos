@@ -1,0 +1,5 @@
+#Lista Comum
+lista_comum = [i for i in range(10**6)]
+
+#Generator
+generator = (i for i in range(10**6))
