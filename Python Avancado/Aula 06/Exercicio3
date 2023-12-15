@@ -1,0 +1,21 @@
+def realizar_divisao(entrada):
+    try:
+        divisao = 1 / entrada
+        print("Resultado da divisão:", divisao)
+    except ZeroDivisionError as e:
+        print(f"Erro de divisão por zero: {e}")
+    except TypeError as e:
+        print(f"Erro de tipo: {e}")
+    except Exception as e:
+        print(f"Erro genérico: {e}")
+    finally:
+        print("Nome do programa: Tratamento de Erros Python")
+
+entrada1 = 0
+realizar_divisao(entrada1)
+
+entrada2 = 'teste'
+realizar_divisao(entrada2)
+
+entrada3 = 2
+realizar_divisao(entrada3)

@@ -1,0 +1,20 @@
+def realizar_divisao():
+    try:
+        numero1 = float(input("Digite o primeiro número: "))
+        numero2 = float(input("Digite o segundo número: "))
+        
+        resultado = numero1 / numero2
+        
+        print(f"Resultado da divisão: {resultado}")
+    
+    except ZeroDivisionError:
+        print("Erro: Divisão por zero não é permitida, digite um segundo número diferente de zero")
+    
+    except ValueError:
+        print("Erro: Digite números válidos")
+    
+    except Exception as e:
+        print(f"Erro inesperado: {e}")
+
+# Chamar a função
+realizar_divisao()
